@@ -12,6 +12,7 @@ public class LoggerFactory {
     @Bean
     @Scope("prototype")
     public Logger logger(InjectionPoint ip){
+
         return Logger.getLogger(ip.getClass().getName());
     }
 }

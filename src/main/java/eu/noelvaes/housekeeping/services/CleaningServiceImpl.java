@@ -9,14 +9,14 @@ import javax.annotation.PreDestroy;
 
 @Component
 public class CleaningServiceImpl implements CleaningService{
-    @Autowired
     private CleaningTool cleaningTool;
     private double rate;
 
-//    public void setCleaningTool(CleaningTool cleaningTool) {
-//        this.cleaningTool = cleaningTool;
-//    }
-//
+    @Autowired
+    public void setCleaningTool(CleaningTool cleaningTool) {
+        this.cleaningTool = cleaningTool;
+    }
+
 
     @Value("9")
     public void setRate(double rate) {
