@@ -20,7 +20,7 @@ public class CleaningServiceImpl implements CleaningService{
     }
 
 
-    @Value("9")
+    @Value("${rate}")
     public void setRate(double rate) {
         this.rate = rate;
     }
@@ -39,5 +39,13 @@ public class CleaningServiceImpl implements CleaningService{
     public void clean() {
         System.out.println("Cleaning the house");
         cleaningTool.doCleanJob();
+    }
+
+    @Override
+    public String toString() {
+        return "CleaningServiceImpl{" +
+                "cleaningTool=" + cleaningTool +
+                ", rate=" + rate +
+                '}';
     }
 }

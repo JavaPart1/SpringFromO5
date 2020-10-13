@@ -40,6 +40,7 @@ public class DomesticServiceImpl implements DomesticService{
     public void runHouseHold() {
         logger.info("Running household");
         this.cs.clean();
+        System.out.println(this.cs.toString());
         this.gs.garden();
 
     }

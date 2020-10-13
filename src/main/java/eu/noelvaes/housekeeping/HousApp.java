@@ -14,7 +14,7 @@ public class HousApp {
 //        CleaningService scott = ctx.getBean("scott",CleaningService.class);
 //        GardeningService scotty = ctx.getBean("scotty",GardeningService.class);
 
-        ctx.getEnvironment().setActiveProfiles("bigHouse");
+        ctx.getEnvironment().setActiveProfiles("smallHouse");
         ctx.register(AppConfig.class);
         ctx.refresh();
         DomesticService service =
