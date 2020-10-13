@@ -9,6 +9,7 @@ import org.springframework.context.annotation.*;
 public class AppConfig {
 
     @Bean
+    @Profile("default")
     public CleaningService service(CleaningTool tool){
         CleaningServiceImpl service = new CleaningServiceImpl();
         service.setCleaningTool(tool);

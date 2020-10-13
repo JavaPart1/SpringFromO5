@@ -1,12 +1,13 @@
 package eu.noelvaes.housekeeping.services;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.context.annotation.Scope;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 @Component
 @Scope("prototype")
-@Order(1)
+@Profile("!bigHouse")
 public class DisposableDuster implements CleaningTool{
     private boolean used;
 

@@ -1,6 +1,7 @@
 package eu.noelvaes.housekeeping.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
@@ -8,6 +9,7 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
 @Component
+@Profile("smallHouse | bigHouse")
 public class GardeningServiceImpl implements GardeningService{
     @Autowired
     private GardeningTool tool;

@@ -6,12 +6,17 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 public class HousApp {
     public static void main(String[] args) {
-        ConfigurableApplicationContext ctx =
-                new AnnotationConfigApplicationContext(AppConfig.class);
-//        CleaningService jill = ctx.getBean("jill",CleaningService.class);
+        AnnotationConfigApplicationContext ctx =
+                new AnnotationConfigApplicationContext();
+
+        //        CleaningService jill = ctx.getBean("jill",CleaningService.class);
 //        CleaningService bob = ctx.getBean("bob",CleaningService.class);
 //        CleaningService scott = ctx.getBean("scott",CleaningService.class);
 //        GardeningService scotty = ctx.getBean("scotty",GardeningService.class);
+
+        ctx.getEnvironment().setActiveProfiles("bigHouse");
+        ctx.register(AppConfig.class);
+        ctx.refresh();
         DomesticService service =
                 ctx.getBean("domesticService",DomesticService.class);
 
@@ -28,6 +33,7 @@ public class HousApp {
 //        scott.clean();
 //        scott.clean();
 //        scotty.garden();
+
         service.runHouseHold();
 
         ctx.close();

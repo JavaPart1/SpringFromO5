@@ -2,6 +2,7 @@ package eu.noelvaes.housekeeping.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
+import org.springframework.context.annotation.Profile;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
@@ -11,7 +12,7 @@ import java.util.List;
 import java.util.Map;
 
 @Component
-@Primary
+@Profile("bigHouse")
 public class CleaningRobot implements CleaningService{
     private List<CleaningTool> tools;
 
