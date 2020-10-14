@@ -4,6 +4,8 @@ import eu.noelvaes.housekeeping.services.*;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import java.util.Locale;
+
 public class HousApp {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext ctx =
@@ -13,6 +15,8 @@ public class HousApp {
 //        CleaningService bob = ctx.getBean("bob",CleaningService.class);
 //        CleaningService scott = ctx.getBean("scott",CleaningService.class);
 //        GardeningService scotty = ctx.getBean("scotty",GardeningService.class);
+
+        Locale.setDefault(new Locale("fr"));
 
         ctx.getEnvironment().setActiveProfiles("smallHouse");
         ctx.register(AppConfig.class);

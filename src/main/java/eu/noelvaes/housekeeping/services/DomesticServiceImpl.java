@@ -1,6 +1,9 @@
 package eu.noelvaes.housekeeping.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cglib.core.Local;
+import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Profile;
 import org.springframework.context.event.ContextStartedEvent;
 import org.springframework.context.event.EventListener;
@@ -9,6 +12,7 @@ import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
+import java.util.Locale;
 import java.util.logging.Logger;
 
 @Component("domesticService")
@@ -18,6 +22,18 @@ public class DomesticServiceImpl implements DomesticService{
     private GardeningService gs;
     @Autowired
     private Logger logger;
+    private MessageSource ms;
+    private Locale loc;
+
+    @Value("#{T(java.util.Locale).getDefault()}")
+    public void setLoc(Locale loc) {
+        this.loc = loc;
+    }
+
+    @Autowired
+    public void setMessageSource(MessageSource ms) {
+        this.ms = ms;
+    }
 
     @Autowired
     public void setCs(CleaningService cs) {
@@ -31,7 +47,8 @@ public class DomesticServiceImpl implements DomesticService{
 
     @PostConstruct
     public void init(){
-        System.out.println("Initialising bean DomesticServiceImpl...");
+        System.out.println(ms.
+                getMessage("welcome",new Object[] {12}, loc));
     }
 
     @PreDestroy

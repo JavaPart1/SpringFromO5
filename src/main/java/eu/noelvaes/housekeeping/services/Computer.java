@@ -13,7 +13,7 @@ import java.util.List;
 @Component("computer")
 @Profile("spEL")
 public class Computer {
-    private Date purchaseDate;
+    private LocalDate purchaseDate;
     private URL vendorUrl;
     private double price;
     private int memory;
@@ -23,12 +23,17 @@ public class Computer {
     private String os;
     private List<String> features;
 
-    @Value("#{'02/05/2011 12:51'}")
-    public void setPurchaseDate(Date purchaseDate) {
+//    @Value("#{'02/05/2011 12:51'}")
+//    public void setPurchaseDate(Date purchaseDate) {
+//        this.purchaseDate = purchaseDate;
+//    }
+//
+    @Value("#{T(java.time.LocalDate).of(2019,3,27)}")
+    public void setPurchaseDate(LocalDate purchaseDate) {
         this.purchaseDate = purchaseDate;
     }
 
-    public Date getPurchaseDate() {
+    public LocalDate getPurchaseDate() {
         return purchaseDate;
     }
 
