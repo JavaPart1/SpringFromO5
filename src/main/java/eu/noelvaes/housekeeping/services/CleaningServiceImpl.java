@@ -3,6 +3,7 @@ package eu.noelvaes.housekeeping.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Profile;
+import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
@@ -14,11 +15,15 @@ public class CleaningServiceImpl implements CleaningService{
     private CleaningTool cleaningTool;
     private double rate;
 
+    @EventListener
+    public void onLunchEvent(LunchEvent e){
+        System.out.println("CleaningService is taking a break for lunch");
+    }
+
     @Autowired
     public void setCleaningTool(CleaningTool cleaningTool) {
         this.cleaningTool = cleaningTool;
     }
-
 
     @Value("${rate}")
     public void setRate(double rate) {

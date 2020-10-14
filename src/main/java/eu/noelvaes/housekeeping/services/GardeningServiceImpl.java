@@ -2,6 +2,7 @@ package eu.noelvaes.housekeeping.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;
+import org.springframework.context.event.EventListener;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
@@ -17,6 +18,11 @@ public class GardeningServiceImpl implements GardeningService{
 //    public void setGardeningTool(GardeningTool tool) {
 //        this.tool = tool;
 //    }
+
+    @EventListener
+    public void onLunchEvent(LunchEvent e){
+        System.out.println("GardeningService is taking a break for lunch");
+    }
 
     @PostConstruct
     public void init(){

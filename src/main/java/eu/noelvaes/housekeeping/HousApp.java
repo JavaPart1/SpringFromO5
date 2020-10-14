@@ -34,7 +34,9 @@ public class HousApp {
 //        scott.clean();
 //        scotty.garden();
 
-        service.runHouseHold();
+        ctx.start();
+        //service.runHouseHold();
+        //ctx.publishEvent(new LunchEvent());
 
         ctx.close();
     }
