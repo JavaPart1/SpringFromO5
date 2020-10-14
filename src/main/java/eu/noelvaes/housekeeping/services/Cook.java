@@ -21,7 +21,7 @@ public class Cook {
     public void makeLunch(ContextStartedEvent e){
         System.out.println("Cook - Context started");
         System.out.println("Cook - Making lunch");
-        //publisher.publishEvent(new LunchEvent());
+        publisher.publishEvent(new LunchEvent());
     }
 
 }
