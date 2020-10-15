@@ -38,6 +38,7 @@ public class HousApp {
 //        scott.clean();
 //        scotty.garden();
 
+        System.out.println(((MusicMaker) service).playMusic(" "));
         ctx.start();
         //service.runHouseHold();
         //ctx.publishEvent(new LunchEvent());

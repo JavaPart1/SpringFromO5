@@ -4,4 +4,5 @@ open module eu.noelvaes.spring{
     requires spring.beans;
     requires java.sql;
     requires java.annotation;
+    requires org.aspectj.weaver;
 }

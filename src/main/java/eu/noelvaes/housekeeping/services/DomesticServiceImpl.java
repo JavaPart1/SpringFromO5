@@ -63,7 +63,7 @@ public class DomesticServiceImpl implements DomesticService{
         System.out.println("DomesticService - Context started");
         logger.info("Running household");
         this.cs.clean();
-        System.out.println(this.cs.toString());
+        //System.out.println(this.cs.toString());
         this.gs.garden();
 
     }

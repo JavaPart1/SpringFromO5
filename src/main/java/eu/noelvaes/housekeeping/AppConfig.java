@@ -8,6 +8,7 @@ import org.springframework.context.support.ResourceBundleMessageSource;
 
 @Configuration
 @ComponentScan
+@EnableAspectJAutoProxy
 @PropertySource("classpath:application.properties")
 public class AppConfig {
 
@@ -22,7 +23,7 @@ public class AppConfig {
     }
 
     @Bean
-    @Profile("default")
+    @Profile("spEL")
     public CleaningService service(CleaningTool tool){
         CleaningServiceImpl service = new CleaningServiceImpl();
         service.setCleaningTool(tool);
