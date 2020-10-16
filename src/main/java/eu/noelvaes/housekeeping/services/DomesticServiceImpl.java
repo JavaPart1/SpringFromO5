@@ -65,6 +65,10 @@ public class DomesticServiceImpl implements DomesticService{
         this.cs.clean();
         //System.out.println(this.cs.toString());
         this.gs.garden();
+    }
 
+    @Override
+    public String toString() {
+        return "DomesticServiceImpl{}";
     }
 }

@@ -6,7 +6,6 @@ import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 @Component
-@Primary
 @Profile("smallHouse")
 public class Broom implements CleaningTool{
     public void doCleanJob() {

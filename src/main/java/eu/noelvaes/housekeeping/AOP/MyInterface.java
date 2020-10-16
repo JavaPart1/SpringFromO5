@@ -1,4 +1,4 @@
-package eu.noelvaes.AOP;
+package eu.noelvaes.housekeeping.AOP;
 
 public interface MyInterface {
     public String sayHello(String name);

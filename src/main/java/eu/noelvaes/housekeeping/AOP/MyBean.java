@@ -1,6 +1,6 @@
-package eu.noelvaes.housekeeping.services;
+package eu.noelvaes.housekeeping.AOP;
 
-import eu.noelvaes.AOP.MyInterface;
+import eu.noelvaes.housekeeping.AOP.MyInterface;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 

@@ -1,4 +1,4 @@
-package eu.noelvaes.AOP;
+package eu.noelvaes.housekeeping.AOP;
 
 import eu.noelvaes.housekeeping.AppConfig;
 import org.springframework.context.ConfigurableApplicationContext;

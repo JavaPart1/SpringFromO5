@@ -1,4 +1,4 @@
-package eu.noelvaes.housekeeping.services;
+package eu.noelvaes.housekeeping.aspects;
 
 import eu.noelvaes.housekeeping.services.MusicMaker;
 import org.aspectj.lang.ProceedingJoinPoint;
