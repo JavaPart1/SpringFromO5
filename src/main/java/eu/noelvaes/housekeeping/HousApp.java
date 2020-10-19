@@ -17,6 +17,8 @@ public class HousApp {
         DomesticService service =
                 ctx.getBean("domesticService",DomesticService.class);
 
-        service.runHouseHold();
+        ctx.start();
+        //service.runHouseHold();
+        ctx.close();
     }
 }
