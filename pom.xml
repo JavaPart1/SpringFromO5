@@ -28,43 +28,39 @@
         </dependencies>
     </dependencyManagement>
 
+    <!-- Springboot Noel Vaes parent starter -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.3.3.RELEASE</version>
+    </parent>
     <dependencies>
-    <!-- Spring dependencies -->
+        <!-- Spring dependencies -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>javax.annotation</groupId>
-            <artifactId>javax.annotation-api</artifactId>
-            <version>1.3.2</version>
         </dependency>
         <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjweaver</artifactId>
             <version>1.9.6</version>
         </dependency>
-    <!-- Database dependencies -->
-    <dependency>
-        <groupId>mysql</groupId>
-        <artifactId>mysql-connector-java</artifactId>
-        <version>8.0.20</version>
-    </dependency>
-    <dependency>
-        <!-- h2 is een database in intern geheugen -->
-        <groupId>com.h2database</groupId>
-        <artifactId>h2</artifactId>
-        <version>1.4.200</version>
-    </dependency>
+        <!-- Spring boot Noel Vaes dependencies -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-configuration-processor</artifactId>
-            <version>2.3.3.RELEASE</version>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+        <!-- Database dependencies -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.20</version>
         </dependency>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot</artifactId>
-            <version>2.3.3.RELEASE</version>
+            <!-- h2 is een database in intern geheugen -->
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>1.4.200</version>
         </dependency>
         <dependency>
             <groupId>org.apache.maven</groupId>
@@ -72,8 +68,13 @@
             <version>3.0</version>
         </dependency>
     </dependencies>
+
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>

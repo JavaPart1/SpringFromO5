@@ -59,11 +59,9 @@ public class DomesticServiceImpl implements DomesticService{
     @EventListener
     @Order(1)
     @Override
-    public void runHouseHold(ContextStartedEvent e) {
-        System.out.println("DomesticService - Context started");
+    public void runHouseHold() {
         logger.info("Running household");
         this.cs.clean();
-        //System.out.println(this.cs.toString());
         this.gs.garden();
     }
 
